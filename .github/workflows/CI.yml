@@ -46,6 +46,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-cargo-build-
       - name: Build and compile project
-        run: cargo test --workspace --no-run
+        run: cargo test --workspace --all-features --no-run
       - name: Run tests
-        run: cargo test --workspace
+        run: cargo test --workspace --all-features

@@ -37,9 +37,9 @@ jobs:
         with:
           cache: true
       - name: Build and compile project
-        run: cargo test --workspace --no-run
+        run: cargo test --workspace --all-features --no-run
       - name: Run tests
-        run: cargo test --workspace
+        run: cargo test --workspace --all-features
 
   musllinux:
     runs-on: ${{ matrix.platform.runner }}
@@ -58,9 +58,9 @@ jobs:
         with:
           cache: true
       - name: Build and compile project
-        run: cargo test --workspace --no-run
+        run: cargo test --workspace --all-features --no-run
       - name: Run tests
-        run: cargo test --workspace
+        run: cargo test --workspace --all-features
 
   windows:
     runs-on: ${{ matrix.platform.runner }}
@@ -75,9 +75,9 @@ jobs:
         with:
           cache: true
       - name: Build and compile project
-        run: cargo test --workspace --no-run
+        run: cargo test --workspace --all-features --no-run
       - name: Run tests
-        run: cargo test --workspace
+        run: cargo test --workspace --all-features
 
   macos:
     runs-on: ${{ matrix.platform.runner }}
@@ -92,9 +92,9 @@ jobs:
         with:
           cache: true
       - name: Build and compile project
-        run: cargo test --workspace --no-run
+        run: cargo test --workspace --all-features --no-run
       - name: Run tests
-        run: cargo test --workspace
+        run: cargo test --workspace --all-features
 
   release:
     name: Release

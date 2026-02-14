@@ -1,5 +1,5 @@
 {
-  ".": "0.0.1",
+  ".": "0.0.2",
   "plumbing/git-filter-tree": "0.0.1",
   "plumbing/git-set-attr": "0.0.1"
 }

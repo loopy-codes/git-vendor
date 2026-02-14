@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.0.2](https://github.com/juniperus-sh/git-vendor/compare/v0.0.1...v0.0.2) (2026-02-14)
+
+
+### Features
+
+* Add README to `git-vendor` package metadata ([6d0a5af](https://github.com/juniperus-sh/git-vendor/commit/6d0a5afb227aa38aa5294bf0e6aa3c3c6b9d5bdd))
+
 ## 0.0.1 (2026-02-14)
 
 

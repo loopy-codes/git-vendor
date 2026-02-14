@@ -16,7 +16,7 @@ tempfile = "3"
 
 [package]
 name = "git-vendor"
-version = "0.0.1"
+version = "0.0.2"
 edition.workspace = true
 publish.workspace = true
 license.workspace = true

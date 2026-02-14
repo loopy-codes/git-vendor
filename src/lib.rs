@@ -1,6 +1,6 @@
 //! Repositories are a myth!
 
-use git2::Error;
+use git2::{Error, Repository};
 
 pub trait Vendor {
     /// Add the pattern to the appropriate `.gitattributes` file using `git_set_attr`.
@@ -34,4 +34,36 @@ pub trait Vendor {
 
     /// Merge the latest content from all relevant vendor sources.
     fn merge(&self, maybe_pattern: Option<&str>) -> Result<(), Error>;
+}
+
+impl Vendor for Repository {
+    fn track_pattern(
+        &self,
+        pattern: &str,
+        url: &str,
+        maybe_branch: Option<&str>,
+    ) -> Result<(), Error> {
+        let _ = (pattern, url, maybe_branch);
+        Err(Error::from_str("Not yet implemented"))
+    }
+
+    fn untrack_pattern(&self, pattern: &str) -> Result<(), Error> {
+        let _ = pattern;
+        Err(Error::from_str("Not yet implemented"))
+    }
+
+    fn status(&self, maybe_pattern: Option<&str>) -> Result<(), Error> {
+        let _ = maybe_pattern;
+        Err(Error::from_str("Not yet implemented"))
+    }
+
+    fn fetch(&self, maybe_pattern: Option<&str>) -> Result<(), Error> {
+        let _ = maybe_pattern;
+        Err(Error::from_str("Not yet implemented"))
+    }
+
+    fn merge(&self, maybe_pattern: Option<&str>) -> Result<(), Error> {
+        let _ = maybe_pattern;
+        Err(Error::from_str("Not yet implemented"))
+    }
 }

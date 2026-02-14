@@ -3,6 +3,9 @@
 pub use git2::{Error, Repository};
 use globset::{GlobSet, GlobSetBuilder};
 
+#[cfg(feature = "cli")]
+pub mod cli;
+
 pub trait FilterTree {
     /// Filters tree entries by gitattributes-style patterns and returns a new tree with contents filtered through the provided patterns.
     /// Recursively walks the tree and matches patterns against full paths from the tree root.

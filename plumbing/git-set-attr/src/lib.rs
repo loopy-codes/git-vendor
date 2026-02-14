@@ -21,6 +21,9 @@ use std::{
     path::{Path, PathBuf},
 };
 
+#[cfg(feature = "cli")]
+pub mod cli;
+
 /// A trait which provides methods for settings attributes in a Git repository.
 pub trait SetAttr {
     /// Set attributes in the appropriate `.gitattributes` file.

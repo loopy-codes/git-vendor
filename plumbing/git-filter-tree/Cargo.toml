@@ -10,6 +10,7 @@ name = "git-filter-tree"
 required-features = ["cli"]
 
 [features]
+default = ["cli"]
 cli = ["dep:clap"]
 
 [dependencies]

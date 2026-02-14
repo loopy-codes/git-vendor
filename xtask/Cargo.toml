@@ -8,3 +8,5 @@ license.workspace = true
 [dependencies]
 clap.workspace = true
 clap_mangen.workspace = true
+git-filter-tree = { path = "../plumbing/git-filter-tree" }
+git-set-attr = { path = "../plumbing/git-set-attr" }

@@ -10,6 +10,7 @@ name = "git-set-attr"
 required-features = ["cli"]
 
 [features]
+default = ["cli"]
 cli = ["dep:clap"]
 
 [dependencies]

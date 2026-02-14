@@ -26,3 +26,6 @@ readme = "README.md"
 git2.workspace = true
 git-filter-tree = { path = "plumbing/git-filter-tree" }
 git-set-attr = { path = "plumbing/git-set-attr" }
+
+[dev-dependencies]
+tempfile.workspace = true

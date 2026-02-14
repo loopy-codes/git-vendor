@@ -9,8 +9,8 @@
 
 ## Overview
 
-*More documentation is en route!
+*More documentation is en route!*
 
 ## Installation
 
-*Installation instructions are en route!
+*Installation instructions are en route!*

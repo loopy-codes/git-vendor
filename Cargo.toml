@@ -20,6 +20,7 @@ version = "0.0.1"
 edition.workspace = true
 publish.workspace = true
 license.workspace = true
+readme = "README.md"
 
 [dependencies]
 git2.workspace = true

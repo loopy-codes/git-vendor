@@ -19,7 +19,7 @@ jobs:
   pre-commit:
     name: Run pre-commit checks
     runs-on: ubuntu-latest
-    if: ${{ !github.event.pull_request.draft && github.event.action != 'edited' }}
+    if: ${{ !github.event.pull_request.draft }}
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -98,7 +98,7 @@ jobs:
   cargo-deny:
     name: Run cargo-deny
     runs-on: ubuntu-latest
-    if: ${{ !github.event.pull_request.draft && github.event.action != 'edited' }}
+    if: ${{ !github.event.pull_request.draft }}
     strategy:
       matrix:
         checks:
@@ -123,6 +123,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: |
-          result="${{ (contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')) && 'failure' || 'success' }}"
+          result="${{ (needs.pre-commit.result == 'skipped' || needs.cargo-deny.result == 'skipped' || contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')) && 'failure' || 'success' }}"
           echo "result: $result"
           [[ "$result" == "success" ]] || exit 1

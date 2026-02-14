@@ -207,7 +207,7 @@ dependencies = [
 
 [[package]]
 name = "git-filter-tree"
-version = "0.0.0"
+version = "0.0.1"
 dependencies = [
  "clap",
  "git2",
@@ -216,7 +216,7 @@ dependencies = [
 
 [[package]]
 name = "git-set-attr"
-version = "0.0.0"
+version = "0.0.1"
 dependencies = [
  "clap",
  "git2",

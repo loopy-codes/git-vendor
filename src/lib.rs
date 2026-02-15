@@ -512,15 +512,22 @@ fn parse_vendor_deps(path: &Path) -> Result<Vec<VendorDep>, Error> {
         let mut name = None;
         let mut url = None;
         let mut branch = None;
+        let mut is_vendored = false;
 
         for attr in parts {
-            if let Some(v) = attr.strip_prefix("vendor-name=") {
+            if attr == "vendored" {
+                is_vendored = true;
+            } else if let Some(v) = attr.strip_prefix("vendor-name=") {
                 name = Some(v.to_string());
             } else if let Some(v) = attr.strip_prefix("vendor-url=") {
                 url = Some(v.to_string());
             } else if let Some(v) = attr.strip_prefix("vendor-branch=") {
                 branch = Some(v.to_string());
             }
+        }
+
+        if !is_vendored {
+            continue;
         }
 
         if let (Some(name), Some(url)) = (name, url) {
@@ -832,7 +839,7 @@ mod tests {
         // Missing vendor-branch → still parsed, branch is None
         fs::write(
             &path,
-            "*.txt vendor-name=o/r vendor-url=https://a.com/o/r.git\n",
+            "*.txt vendored vendor-name=o/r vendor-url=https://a.com/o/r.git\n",
         )
         .unwrap();
         let deps = parse_vendor_deps(&path).unwrap();

@@ -556,6 +556,7 @@ fn remove_vendor_lines(path: &Path, pattern: &str) -> Result<(), Error> {
     let mut kept = Vec::new();
     for line in content.lines() {
         if is_vendor_line_for_pattern(line, pattern) {
+            // FIXME: what if other non-vendor-related attributes are on this line?
             continue;
         }
         kept.push(line);
